@@ -1,9 +1,12 @@
-def get_home_content():
-    message = "Welcome to My Mini Flask Website!"
-    features = [
-        "Built with Flask",
-        "Follows 3-layer architecture",
-        "Uses HTML templating with Jinja2",
-        "Easy to maintain and extend"
-    ]
-    return message, features
+# app/services.py
+
+from .models import get_tasks, add_task, delete_task
+
+def get_all_tasks():
+    return get_tasks()
+
+def create_task(task_text):
+    add_task(task_text)
+
+def remove_task(index):
+    delete_task(index)
